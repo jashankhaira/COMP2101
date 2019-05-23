@@ -20,8 +20,5 @@ find / -type f -executable -perm -2000 -ls 2>/dev/null |
 echo "TASK 2:"
 echo "============="
 #du -ha / 2>/dev/null | sort -r -k 1 | head -n 10
-find / 2>/dev/null -type f -exec lsw -l --block-size=M {} +
-| sort -rh -k 5
-| head -n 10
-| awk '{print $5, $3, $9}'
+find / 2>/dev/null -type f -exec lsw -l --block-size=M {} + | sort -rh -k 5 | head -n 10 | awk '{print $5, $3, $9}'
 echo ""
